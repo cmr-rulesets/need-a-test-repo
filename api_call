@@ -1,0 +1,38 @@
+curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token <YOUR TOKEN>" https://api.github.com/repos/octodemo/dependencies-demo-leftrightleft/dependency-graph/snapshots  -d \
+'{
+    "version": 0,
+    "sha": "5bb389ffc5c951e3c8eb7a78b51f187c822d7aa9",
+    "ref": "refs/heads/main",
+    "job": {
+        "correlator": "api",
+        "id": "3"
+    },
+    "detector": {
+        "name": "gradle",
+        "version": "0.0.1",
+        "url": "https://github.com/octo-org/octo-repo2"
+    },
+    "scanned": "2022-07-12T08:25:00Z",
+    "manifests": {
+        "package.json": {
+            "name": "package.json",
+            "file": {
+                "source_location": "package.json"
+            },
+            "resolved": {
+                "mustard": {
+                    "package_url": "pkg:/npm/hotdog/mustard@1.0.7"
+                },
+                "@actions/http-client": {
+                    "package_url": "pkg:/npm/%40actions/http-client@1.0.7",
+                    "dependencies": [
+                        "tunnel"
+                    ]
+                },
+                "tunnel": {
+                    "package_url": "pkg:/npm/tunnel@0.0.6"
+                }
+            }
+        }
+    }
+}'
